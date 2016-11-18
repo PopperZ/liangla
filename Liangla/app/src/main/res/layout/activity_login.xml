@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:src="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/num"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/head"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.16"
+            android:gravity="center"
+            android:text="+86"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#00000000"
+            android:src="@mipmap/down" />
+
+        <EditText
+            android:id="@+id/phonenum"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:ems="10"
+            android:hint="输入手机号"
+            android:inputType="number"
+            android:textColor="#bec0bf"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v1_id"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:layout_alignStart="@+id/num"
+        android:layout_below="@+id/num"
+        android:background="#bec0bf" />
+
+    <LinearLayout
+        android:id="@+id/ll_pwd"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/ll_other"
+        android:layout_below="@+id/num"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="65dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.16"
+            android:gravity="center"
+            android:text="密码"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:ems="10"
+            android:hint="输入密码"
+            android:inputType="numberPassword"
+            android:textColor="#bec0bf"
+            android:textSize="10sp" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/pwd_show"
+            android:background="#00000000"
+            android:src="@mipmap/pwd_hide" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v2_id"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:layout_alignStart="@+id/ll_pwd"
+        android:layout_below="@+id/ll_pwd"
+        android:background="#bec0bf" />
+
+    <RelativeLayout
+        android:id="@+id/ll_other"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/num"
+        android:layout_below="@+id/ll_pwd"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="立即注册"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/reset_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/register"
+            android:layout_alignBottom="@+id/register"
+            android:layout_alignParentEnd="true"
+            android:background="#00000000"
+            android:text="忘记密码 ?"
+            android:textSize="8sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:layout_alignStart="@+id/ll_other"
+        android:layout_below="@+id/ll_other"
+        android:text="手机登录"
+        android:background="@color/darkgrey"
+        android:textColor="@color/colorwhite"/>
+
+
+</RelativeLayout>
+
