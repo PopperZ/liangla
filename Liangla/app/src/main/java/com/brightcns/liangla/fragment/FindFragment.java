@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.brightcns.liangla.R;
 
@@ -18,6 +19,7 @@ public class FindFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         if (view == null) {// 优化View减少View的创建次数
             view = inflater.inflate(R.layout.find_layout, null);
             return view;

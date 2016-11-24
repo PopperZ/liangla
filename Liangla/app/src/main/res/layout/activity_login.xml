@@ -49,8 +49,8 @@
             android:ems="10"
             android:hint="输入手机号"
             android:inputType="number"
-            android:textColor="#bec0bf"
-            android:textSize="10sp" />
+            android:textColor="@color/black"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <View

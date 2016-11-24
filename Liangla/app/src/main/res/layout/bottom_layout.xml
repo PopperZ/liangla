@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorblack">
+    android:background="@color/black">
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"
@@ -20,26 +20,24 @@
             android:orientation="vertical"
             android:id="@+id/traffic"
             android:onClick="onClick"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/traffic_btn"
                 android:layout_gravity="center"
                 android:text="交通"
                 android:gravity="center"
-                android:layout_weight="1"
-                />
+                android:layout_marginTop="8dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/traffic_text"
                 android:textAlignment="center"
                 android:text="交通"
                 android:gravity="center"
-                android:layout_weight="1.5"
-                />
+                android:layout_marginTop="5dp"
+                android:textSize="10sp"/>
         </LinearLayout>
        <LinearLayout
            android:layout_width="match_parent"
@@ -48,24 +46,22 @@
            android:orientation="vertical"
            android:id="@+id/travel"
            android:onClick="onClick"
-           android:layout_marginTop="5dp"
-           android:layout_marginBottom="5dp">
+           android:gravity="center">
            <ImageView
-               android:layout_width="wrap_content"
-               android:layout_height="match_parent"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
                android:id="@+id/travel_btn"
                android:text="旅游"
                android:layout_gravity="center"
-               android:layout_weight="1"
-               />
+               android:layout_marginTop="8dp"/>
            <TextView
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
                android:id="@+id/travel_text"
                android:text="旅游"
                android:gravity="center"
-               android:layout_weight="1.5"
-               />
+               android:layout_marginTop="5dp"
+               android:textSize="10sp"/>
        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,24 +70,22 @@
             android:orientation="vertical"
             android:id="@+id/find"
             android:onClick="onClick"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+           android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/find_btn"
                 android:text="发现"
                 android:layout_gravity="center"
-                android:layout_weight="1"
-                />
+                android:layout_marginTop="8dp"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/find_text"
                 android:text="发现"
                 android:gravity="center"
-                android:layout_weight="1.5"
-                />
+                android:layout_marginTop="5dp"
+                android:textSize="10sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -101,14 +95,13 @@
             android:orientation="vertical"
             android:id="@+id/perCenter"
             android:onClick="onClick"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/perCenter_btn"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_marginTop="8dp"
                 />
 
             <TextView
@@ -117,8 +110,8 @@
                 android:id="@+id/perCenter_text"
                 android:text="我的"
                 android:gravity="center"
-                android:layout_weight="1.5"
-                />
+                android:layout_marginTop="5dp"
+                android:textSize="10sp"/>
         </LinearLayout>
 
     </LinearLayout>

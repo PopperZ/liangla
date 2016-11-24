@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black"
+     android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/black"
+        android:fitsSystemWindows="true"
+        android:cropToPadding="true">
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/textTravel"
+        android:text="发现"
+        android:gravity="center"
+        android:background="@color/blueviolet"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/text"
+        android:text="发现"
+        android:gravity="center"
+        android:background="@color/blue"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/textTravel"
+        android:id="@+id/tex"
         android:text="发现"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:background="@color/rosybrown"
+        />
 </LinearLayout>

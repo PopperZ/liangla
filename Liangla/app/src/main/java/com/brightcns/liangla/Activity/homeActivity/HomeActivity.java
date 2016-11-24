@@ -1,14 +1,18 @@
 package com.brightcns.liangla.Activity.homeActivity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.brightcns.liangla.R;
 import com.brightcns.liangla.fragment.FindFragment;
@@ -26,11 +30,16 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
     private LinearLayout mTraffic,mTravel,mFind,mPerCenter;
     private TextView mTrafic_text,mTravel_text,mFind_text,mPerCenter_text;
     private ImageView mTraffic_btn,mTravel_btn,mFind_btn,mPerCenter_btn;
+    private long mExitTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //透明状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //透明导航栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         init();
         onClick(findViewById(R.id.traffic));//默认为"交通"
     }
@@ -61,28 +70,28 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
     private  void setMenuStyle(int vID){
        if (vID==R.id.traffic){
            mTraffic_btn.setImageResource(R.mipmap.traffic_click);
-           mTrafic_text.setTextColor(getResources().getColor(R.color.colorAccent));
+           mTrafic_text.setTextColor(getResources().getColor(R.color.ivory));
        }else{
            mTraffic_btn.setImageResource(R.mipmap.traffic_normal);
            mTrafic_text.setTextColor(getResources().getColor(R.color.colorwhite));
        }
         if (vID==R.id.travel){
             mTravel_btn.setImageResource(R.mipmap.travel_click);
-            mTravel_text.setTextColor(getResources().getColor(R.color.colorAccent));
+            mTravel_text.setTextColor(getResources().getColor(R.color.ivory));
         }else{
             mTravel_btn.setImageResource(R.mipmap.travel_normal);
             mTravel_text.setTextColor(getResources().getColor(R.color.colorwhite));
         }
         if (vID==R.id.find){
             mFind_btn.setImageResource(R.mipmap.find_click);
-            mFind_text.setTextColor(getResources().getColor(R.color.colorAccent));
+            mFind_text.setTextColor(getResources().getColor(R.color.ivory));
         }else{
             mFind_btn.setImageResource(R.mipmap.find_normal);
             mFind_text.setTextColor(getResources().getColor(R.color.colorwhite));
         }
         if (vID==R.id.perCenter){
             mPerCenter_btn.setImageResource(R.mipmap.mine_click);
-            mPerCenter_text.setTextColor(getResources().getColor(R.color.colorAccent));
+            mPerCenter_text.setTextColor(getResources().getColor(R.color.ivory));
         }else{
             mPerCenter_btn.setImageResource(R.mipmap.mine_normal);
             mPerCenter_text.setTextColor(getResources().getColor(R.color.colorwhite));
@@ -158,4 +167,31 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
         transaction.commit();
     }
 
+    @Override
+    public void onAttachFragment(Fragment fragment) {//防止UI重叠
+        super.onAttachFragment(fragment);
+        if (mTraficFragment==null&&fragment instanceof TraficFragment){
+            mTraficFragment= (TraficFragment) fragment;
+        }else if (mTravelFragment==null&&fragment instanceof TravelFragment){
+            mTravelFragment= (TravelFragment) fragment;
+        }else if (mFindFragment==null&&fragment instanceof  FindFragment){
+            mFindFragment= (FindFragment) fragment;
+        }else if (mPerCenterFragment==null&&fragment instanceof PerCenterFragment){
+            mPerCenterFragment= (PerCenterFragment) fragment;
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

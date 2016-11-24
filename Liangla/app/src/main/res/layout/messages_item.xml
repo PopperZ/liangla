@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:id="@+id/message_time"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+        android:gravity="center"/>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:id="@+id/message_name"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/message_icon"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:id="@+id/message_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/message_name"
+            android:layout_alignStart="@+id/message_name" />
+
+        <com.brightcns.liangla.CustomView.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/message_icon"
+            android:layout_marginStart="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="9dp" />
+
+    </RelativeLayout>

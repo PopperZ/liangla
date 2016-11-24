@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/ll_other"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_first"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/ll_other"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.16"
+            android:gravity="center"
+            android:text="密码："
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/first_pwd"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:ems="15"
+            android:hint="  输入密码"
+            android:inputType="numberPassword"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/pwd_show"
+            android:background="#00000000"
+            android:src="@mipmap/pwd_hide" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v1_id"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:layout_alignStart="@+id/ll_first"
+        android:background="#bec0bf"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ll_first" />
+    <LinearLayout
+        android:id="@+id/ll_two"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/v1_id"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.16"
+            android:gravity="center"
+            android:text="再次输入"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/captcha"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:ems="15"
+            android:hint="  再次输入密码"
+            android:inputType="numberPassword"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/pwd_show_two"
+            android:background="#00000000"
+            android:src="@mipmap/pwd_hide" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v2_id"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:layout_alignStart="@+id/ll_two"
+        android:background="#bec0bf"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ll_two" />
+    <Button
+        android:id="@+id/sure_pwd"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:text="确定"
+        android:background="@color/darkgrey"
+        android:textColor="@color/colorwhite"
+        android:layout_below="@+id/v2_id"
+        android:layout_alignStart="@+id/v1_id" />
+</RelativeLayout>

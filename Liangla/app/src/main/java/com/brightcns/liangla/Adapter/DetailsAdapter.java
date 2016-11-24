@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.brightcns.liangla.R;
 import com.brightcns.liangla.engine.Details;
@@ -48,19 +49,19 @@ public class DetailsAdapter extends BaseAdapter {
         if (view==null){
             view= LayoutInflater.from(mContext).inflate(R.layout.details_layout,null);
             viewHolder=new ViewHolder();
-            viewHolder.icon= (ImageButton) view.findViewById(R.id.icon);
+            viewHolder.icon= (ImageView) view.findViewById(R.id.icon);
             viewHolder.name= (TextView) view.findViewById(R.id.name);
             view.setTag(viewHolder);
         }else{
             viewHolder= (ViewHolder) view.getTag();
         }
         Log.e("TGA",lstImageItem.toString());
-        viewHolder.icon.setBackgroundResource(lstImageItem.get(i).getIcon());
+        viewHolder.icon.setImageResource(lstImageItem.get(i).getIcon());
         viewHolder.name.setText(lstImageItem.get(i).getName());
         return view;
     }
     class ViewHolder{
-        ImageButton icon;
+        ImageView icon;
         TextView name;
     }
 }

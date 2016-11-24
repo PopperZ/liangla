@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/message_list"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        >
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/msg_return"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/left_return"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="我的消息"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="清空"
+            android:textColor="@color/ivory"
+            android:gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="18sp"
+            android:id="@+id/clear_message"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/colorline"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorline"
+        android:orientation="vertical">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_msg"
+            android:background="@color/white">
+        </ListView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tips"
+            android:gravity="center"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</LinearLayout>

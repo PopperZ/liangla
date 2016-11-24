@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:id="@+id/travel_image"
+        />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="15dp"
+        android:id="@+id/city_name"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="15dp"
+        android:id="@+id/city_introduce"
+        android:textColor="@color/gainsboro"
+        android:textSize="12sp"
+        android:gravity="center"/>
+</LinearLayout>

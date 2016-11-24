@@ -34,19 +34,6 @@
                 android:gravity="center"
                 android:layout_weight="1"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/msg"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/client"
-                android:text="尊敬的xxx，您好！欢迎使用亮啦！"
-                android:gravity="center"
-                android:visibility="gone"/>
-        </LinearLayout>
     </RelativeLayout>
 
     <ListView

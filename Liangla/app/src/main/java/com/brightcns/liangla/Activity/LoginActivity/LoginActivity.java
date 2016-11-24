@@ -2,6 +2,7 @@ package com.brightcns.liangla.Activity.LoginActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,11 +17,15 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private Button mRegister,mResetPwd,mLogin;
     private EditText mPhoneNum,mPwd;
     private ImageButton mPwd_show;
+    private SharedPreferences.Editor mEdited=null;
+    private SharedPreferences mShare =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
+        mShare=getSharedPreferences("admin",MODE_PRIVATE);
+        mEdited=mShare.edit();
     }
     private void init(){
         mPhoneNum   = (EditText) findViewById(R.id.phonenum);
@@ -50,6 +55,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.login:
                 Toast.makeText(this,"正在登陆。。。。",Toast.LENGTH_SHORT).show();
+                mEdited.putBoolean("isLogin",false);
+                mEdited.commit();
                 break;
             case R.id.pwd_show:
 
